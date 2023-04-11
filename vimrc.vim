@@ -68,14 +68,19 @@ if has('persistent_undo')
     endif
 
 color Monokai
+colorscheme gruvbox
 nnoremap <C-Q> :qa!<CR>
 nnoremap <C-n> :NERDTreeFocus<CR>
+nnoremap <C-m> :NERDTreeToggle<CR>
+
 command Tabnewdir tabnew | execute 'cd ' . getcwd()
 " Open NERDTree when Vim is started
 let g:NERDTreeWinSize=18
 let g:NERDTreeWidth=18
 let g:NERDTreeWinPos='left'
 let g:NERDTreeIgnore=['\.pyc$', '\~$']
+let g:NERDTreeHijackNetrw = 0
+let g:NERDTreeAutoFocus = 0
 
 autocmd VimEnter * NERDTree
 
