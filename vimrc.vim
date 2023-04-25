@@ -44,6 +44,7 @@ Plug '~/my-prototype-plugin'
 
 " Initialize plugin system
 Plug 'scrooloose/nerdtree'
+Plug 'Stoozy/vimcord'
 
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
@@ -70,8 +71,13 @@ if has('persistent_undo')
 color Monokai
 colorscheme gruvbox
 nnoremap <C-Q> :qa!<CR>
+nnoremap <C-a> :wqa!<CR>
 nnoremap <C-n> :NERDTreeFocus<CR>
-nnoremap <C-m> :NERDTreeToggle<CR>
+nnoremap <C-x> <C-w>w
+nnoremap <C-c> :%y+<CR>
+nnoremap <C-d> :below terminal<CR>
+nnoremap <C-s> :vertical below terminal<CR>
+
 
 command Tabnewdir tabnew | execute 'cd ' . getcwd()
 " Open NERDTree when Vim is started
@@ -83,4 +89,13 @@ let g:NERDTreeHijackNetrw = 0
 let g:NERDTreeAutoFocus = 0
 
 autocmd VimEnter * NERDTree
+
+" Set the insert mode color
+highlight ModeMsg guifg=#FF6E67 guibg=#24283b
+
+" Set the command mode color
+highlight Normal guifg=#E0DFFF guibg=#24283b
+
+" Set the visual mode color
+highlight Visual guifg=#61AFEF guibg=#24283b
 
